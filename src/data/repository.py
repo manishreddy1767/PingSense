@@ -1,11 +1,22 @@
 """
 Repository
 
-Provides fast indexed access to datasets.
-The Context Builder and later modules should only use this class.
+Provides indexed access to all datasets and returns
+domain model objects instead of pandas Series.
 """
 
+import pandas as pd
+
 from src.data.manager import DataManager
+
+from src.models.message import Message
+from src.models.user import User
+from src.models.group import Group
+from src.models.business import Business
+from src.models.events import MessageEvents
+from src.models.business_history import UserBusinessHistory
+from src.models.group_membership import GroupMembership
+from src.models.media import Media
 
 
 class Repository:
@@ -14,10 +25,7 @@ class Repository:
 
         self.data = data
 
-        # ----------------------------
         # Primary indexes
-        # ----------------------------
-
         self.messages = data.messages.set_index("message_id")
 
         self.users = data.users.set_index("user_id")
@@ -30,84 +38,104 @@ class Repository:
 
         self.voice_notes = data.voice_notes.set_index("voice_note_id")
 
-    # --------------------------------------------------
+    # -------------------------------------------------
+
+    @staticmethod
+    def _is_missing(value):
+
+        return pd.isna(value)
+
+    # -------------------------------------------------
 
     def get_message(self, message_id):
 
         if message_id not in self.messages.index:
             return None
 
-        return self.messages.loc[message_id]
+        row = self.messages.loc[message_id]
 
-    # --------------------------------------------------
+        return Message.from_series(row)
+
+    # -------------------------------------------------
 
     def get_user(self, user_id):
 
         if user_id not in self.users.index:
             return None
 
-        return self.users.loc[user_id]
+        row = self.users.loc[user_id]
 
-    # --------------------------------------------------
+        return User.from_series(row)
+
+    # -------------------------------------------------
 
     def get_group(self, group_id):
 
-        if group_id != group_id:
+        if self._is_missing(group_id):
             return None
 
         if group_id not in self.groups.index:
             return None
 
-        return self.groups.loc[group_id]
+        row = self.groups.loc[group_id]
 
-    # --------------------------------------------------
+        return Group.from_series(row)
+
+    # -------------------------------------------------
 
     def get_business(self, business_id):
 
-        if business_id != business_id:
+        if self._is_missing(business_id):
             return None
 
         if business_id not in self.businesses.index:
             return None
 
-        return self.businesses.loc[business_id]
+        row = self.businesses.loc[business_id]
 
-    # --------------------------------------------------
+        return Business.from_series(row)
 
-    def get_image(self, image_id):
+    # -------------------------------------------------
 
-        if image_id not in self.images.index:
+    def get_media(self, media_type, media_id):
+
+        if self._is_missing(media_type):
             return None
 
-        return self.images.loc[image_id]
-
-    # --------------------------------------------------
-
-    def get_voice(self, voice_id):
-
-        if voice_id not in self.voice_notes.index:
+        if self._is_missing(media_id):
             return None
 
-        return self.voice_notes.loc[voice_id]
+        media_type = str(media_type).lower()
 
-    # --------------------------------------------------
+        if media_type == "image":
 
-    def get_group_membership(self, group_id, user_id):
+            if media_id not in self.images.index:
+                return None
 
-        df = self.data.group_members
+            row = self.images.loc[media_id]
 
-        row = df[
-            (df.group_id == group_id)
-            &
-            (df.user_id == user_id)
-        ]
+            return Media(
+                media_id=media_id,
+                media_type="image",
+                file_path=row["file_path"]
+            )
 
-        if row.empty:
-            return None
+        if media_type == "voice":
 
-        return row.iloc[0]
+            if media_id not in self.voice_notes.index:
+                return None
 
-    # --------------------------------------------------
+            row = self.voice_notes.loc[media_id]
+
+            return Media(
+                media_id=media_id,
+                media_type="voice",
+                file_path=row["file_path"]
+            )
+
+        return None
+
+    # -------------------------------------------------
 
     def get_message_events(self, message_id, user_id):
 
@@ -122,11 +150,34 @@ class Repository:
         if row.empty:
             return None
 
-        return row.iloc[0]
+        return MessageEvents.from_series(row.iloc[0])
 
-    # --------------------------------------------------
+    # -------------------------------------------------
+
+    def get_group_membership(self, group_id, user_id):
+
+        if self._is_missing(group_id):
+            return None
+
+        df = self.data.group_members
+
+        row = df[
+            (df.group_id == group_id)
+            &
+            (df.user_id == user_id)
+        ]
+
+        if row.empty:
+            return None
+
+        return GroupMembership.from_series(row.iloc[0])
+
+    # -------------------------------------------------
 
     def get_business_history(self, user_id, business_id):
+
+        if self._is_missing(business_id):
+            return None
 
         df = self.data.user_business_history
 
@@ -139,4 +190,4 @@ class Repository:
         if row.empty:
             return None
 
-        return row.iloc[0]
+        return UserBusinessHistory.from_series(row.iloc[0])
