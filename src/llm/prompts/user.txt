@@ -1,23 +1,31 @@
 Incoming Message
+================
 
 {{message}}
 
 Retrieved Evidence
+==================
 
 {{evidence}}
 
 Triggered Rules
+===============
 
 {{rules}}
 
 Risk Score
+==========
 
 {{risk_score}}
 
-Historical Behaviour
+User History
+============
 
 {{history}}
 
-Decide the correct action.
+Based on all of the above information:
 
-Return JSON only.
+1. Decide the best action.
+2. Decide the message type.
+3. Explain your reasoning.
+4. Return only JSON.
