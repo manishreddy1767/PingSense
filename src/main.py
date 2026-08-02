@@ -1,6 +1,13 @@
 from src.data.manager import DataManager
 from src.data.repository import Repository
 
+from src.context.builder import ContextBuilder
+from src.context.joins import ContextJoins
+
+from src.multimodal.normalizer import MultimodalNormalizer
+
+from src.retrieval.retriever import EvidenceRetriever
+
 
 def main():
 
@@ -8,24 +15,25 @@ def main():
 
     repo = Repository(data)
 
+    builder = ContextBuilder(
+        ContextJoins(repo)
+    )
+
+    normalizer = MultimodalNormalizer()
+
+    retriever = EvidenceRetriever(repo)
+
     message_id = data.messages.iloc[0]["message_id"]
 
-    message = repo.get_message(message_id)
+    context = builder.build(message_id)
 
-    print(type(message))
-    print(message)
+    context = normalizer.normalize(context)
 
-    user = repo.get_user(message.user_id)
-
-    print()
-    print(type(user))
-    print(user)
-
-    business = repo.get_business(message.business_id)
+    context = retriever.retrieve(context)
 
     print()
-    print(type(business))
-    print(business)
+
+    print(context.retrieved_evidence)
 
 
 if __name__ == "__main__":

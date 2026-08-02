@@ -17,3 +17,17 @@ with open(ROOT_DIR / "configs" / "config.yaml", "r") as file:
 # API Keys
 CLAUDE_API_KEY = os.getenv("CLAUDE_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# ------------------------------------------------------
+# Frequently used configuration shortcuts
+# ------------------------------------------------------
+
+RETRIEVAL = CONFIG["retrieval"]
+
+LLM = CONFIG["llm"]
+
+RULES = CONFIG["rules"]
+
+CONFIDENCE = CONFIG["confidence"]
+
+PATHS = CONFIG["paths"]

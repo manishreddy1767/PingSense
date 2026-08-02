@@ -11,6 +11,12 @@ paths:
 retrieval:
   top_k: 5
 
+  weights:
+    same_business: 0.50
+    same_sender: 0.25
+    same_group: 0.15
+    text_similarity: 0.10
+
 llm:
   provider: claude
   temperature: 0.0

@@ -13,6 +13,7 @@ from src.models.group_membership import GroupMembership
 
 @dataclass(slots=True)
 class Context:
+    # Core objects
     message: Message
     user: User
 
@@ -26,3 +27,17 @@ class Context:
     business_history: Optional[UserBusinessHistory]
 
     group_membership: Optional[GroupMembership]
+
+    # Added by the Multimodal Normalizer
+    effective_text: Optional[str] = None
+
+    # Metadata produced later in the pipeline
+    retrieved_evidence: Optional[list] = None
+
+    rule_features: Optional[dict] = None
+
+    llm_result: Optional[dict] = None
+
+    final_action: Optional[str] = None
+
+    confidence: Optional[float] = None
