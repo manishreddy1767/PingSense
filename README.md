@@ -2,64 +2,95 @@
 
 > AI-Powered WhatsApp Notification Router
 
-PingSense is an explainable AI system that intelligently routes WhatsApp notifications into **Notify**, **Summarize**, or **Mute** by combining hybrid retrieval, rule-based reasoning, and LLM-powered decision making.
+PingSense is an intelligent notification routing system that analyzes incoming WhatsApp messages and decides whether they deserve an **immediate notification**, should be **summarized**, or can be **muted**.
+
+The system combines **Hybrid Retrieval**, **Rule-Based Reasoning**, **Semantic Search**, **LLM Decision Making**, and **Confidence Scoring** to make explainable notification decisions.
 
 ---
 
-## 🚀 Features
+# 📌 Problem Statement
+
+Modern messaging platforms generate an overwhelming number of notifications every day. Important alerts such as OTPs, payment requests, emergency messages, and scams are often mixed with promotional messages and routine group chats.
+
+PingSense intelligently filters these notifications and ensures users receive only the messages that truly deserve immediate attention.
+
+---
+
+# ✨ Features
 
 - 🔍 Hybrid Retrieval (Token + Semantic Search)
-- 🤖 LLM-based Message Classification
-- ⚙️ Rule-based Decision Engine
-- 📈 Confidence Scoring
-- 🛡️ Override Engine
-- 📊 Analytics Dashboard
-- 🖥️ Streamlit Web Interface
+- 🧠 Rule-Based Decision Engine
+- 🤖 Claude LLM Integration
+- 📊 Confidence Scoring
+- 🛡 Override Engine
+- 📩 Explainable Notification Decisions
+- 📈 Analytics Dashboard
+- 📂 Batch Message Processing
 - 📥 JSON & CSV Export
-- 🔎 Explainable AI Pipeline
+- 🖥 Interactive Streamlit Dashboard
 
 ---
 
-## 🏗️ System Architecture
+# 🏗 System Architecture
 
 ```
 Incoming WhatsApp Message
-          │
-          ▼
- Context Builder
-          │
-          ▼
+            │
+            ▼
+      Context Builder
+            │
+            ▼
  Multimodal Normalizer
-(Text / Image / Voice)
-          │
-          ▼
+            │
+            ▼
  Hybrid Retrieval
 (Token + Semantic Search)
-          │
-          ▼
- Rule Engine
-          │
-          ▼
- Claude LLM
-          │
-          ▼
- Override Engine
-          │
-          ▼
- Confidence Engine
-          │
-          ▼
+            │
+            ▼
+      Rule Engine
+            │
+            ▼
+      Claude LLM
+            │
+            ▼
+    Override Engine
+            │
+            ▼
+  Confidence Engine
+            │
+            ▼
  Final Decision
+
+ Notify
+ Summarize
+ Mute
 ```
 
 ---
 
-## 📂 Project Structure
+# 🚀 Technologies Used
+
+| Category | Technology |
+|----------|------------|
+| Language | Python |
+| Frontend | Streamlit |
+| Data | Pandas, NumPy |
+| Machine Learning | Sentence Transformers |
+| Semantic Search | all-MiniLM-L6-v2 |
+| LLM | Claude API |
+| Visualization | Matplotlib |
+| Similarity | Scikit-learn |
+| Output | JSON, CSV |
+
+---
+
+# 📂 Project Structure
 
 ```
 PingSense/
 │
 ├── Home.py
+│
 ├── pages/
 │   ├── 1_Analytics.py
 │   └── 2_Architecture.py
@@ -75,80 +106,55 @@ PingSense/
 │   ├── overrides/
 │   ├── pipeline/
 │   ├── retrieval/
-│   └── rules/
+│   ├── rules/
+│   └── main.py
 │
-├── data/
 ├── outputs/
+│   ├── results.csv
+│   └── results.json
+│
 ├── screenshots/
+│
 ├── docs/
+│
 ├── requirements.txt
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## ⚙️ Technologies Used
+# ⚙ Installation
 
-| Layer | Technology |
-|--------|------------|
-| Frontend | Streamlit |
-| Backend | Python |
-| Data Processing | Pandas |
-| Semantic Retrieval | Sentence Transformers |
-| LLM | Claude |
-| Visualization | Matplotlib |
-| Output | JSON, CSV |
-
----
-
-## 📊 Analytics
-
-The analytics dashboard provides:
-
-- Action distribution
-- Message type distribution
-- Confidence distribution
-- Search & filter
-- Export results
-
----
-
-## 🖥️ Streamlit Dashboard
-
-The application provides:
-
-- 📩 Incoming Message
-- 🔍 Retrieved Evidence
-- ⚙️ Triggered Rules
-- 🤖 LLM Decision
-- 🎯 Final Decision
-- 📊 Analytics
-- 🏗️ Architecture
-
----
-
-## ▶️ Installation
-
-Clone the repository:
+Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/PingSense.git
+git clone <repository-url>
+```
+
+Move into the project
+
+```bash
 cd PingSense
 ```
 
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Generate outputs:
+---
+
+# ▶ Running the Project
+
+Generate predictions
 
 ```bash
 python -m src.main
 ```
 
-Launch the dashboard:
+Launch Streamlit Dashboard
 
 ```bash
 streamlit run Home.py
@@ -156,60 +162,103 @@ streamlit run Home.py
 
 ---
 
-## 📷 Screenshots
+# 📊 Analytics
 
-### Home Dashboard
+The analytics dashboard provides
+
+- Total Messages
+- Notify Count
+- Summarize Count
+- Mute Count
+- Message Type Distribution
+- Confidence Distribution
+- Search & Filter
+- CSV Export
+- JSON Export
+
+---
+
+# 🧠 AI Decision Pipeline
+
+1. Load incoming message
+2. Build contextual information
+3. Normalize multimodal content
+4. Retrieve similar historical messages
+5. Apply rule engine
+6. Generate LLM reasoning
+7. Apply override rules
+8. Compute confidence score
+9. Produce final notification decision
+
+---
+
+# 📷 Screenshots
+
+## Home Dashboard
 
 ![Home](screenshots/home.png)
 
-### Analytics Dashboard
+---
+
+## Analytics Dashboard
 
 ![Analytics](screenshots/analytics.png)
 
-### Architecture Page
+---
+
+## Architecture
 
 ![Architecture](screenshots/architecture.png)
 
 ---
 
-## 📈 Sample Output
+## Decision View
 
-```
-Action      : Notify
-Type        : Business
-Confidence  : 76.5%
+![Decision](screenshots/decision.png)
 
-Evidence
-- Same business
-- Previously opened
-- Semantic similarity
+---
 
-Decision
-Notify immediately
+## Evidence View
+
+![Evidence](screenshots/evidence.png)
+
+---
+
+# 📈 Sample Output
+
+```json
+{
+    "message_id": "msg_023",
+    "action": "notify",
+    "message_type": "business",
+    "confidence": 0.765,
+    "reason": "Payment related message."
+}
 ```
 
 ---
 
-## 🔮 Future Work
+# 🔮 Future Improvements
 
-- Live WhatsApp integration
-- Real-time notifications
-- User preference learning
-- Additional LLM providers
+- Voice message transcription
+- Image OCR
+- Multilingual support
+- Personalized learning
+- Real-time WhatsApp integration
+- Vector database retrieval
 - Mobile application
-- RAG-based memory
-- Active learning feedback
+- User feedback learning
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Manish Reddy**
 
-Computer Science Engineering Student
+Computer Science and Engineering
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is licensed under the MIT License.
+This project is released under the MIT License.
