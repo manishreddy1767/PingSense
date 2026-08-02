@@ -82,17 +82,33 @@ class PipelineOrchestrator:
             context
         )
 
-        self.confidence.run(
+        confidence = self.confidence.run(
             context,
             decision,
         )
 
-        result = self.formatter.format(
+        formatted = self.formatter.format(
             context,
             decision,
         )
 
-        return result
+        return {
+
+            "context": context,
+
+            "retrieved_evidence": context.retrieved_evidence,
+
+            "rule_result": context.rule_features,
+
+            "llm_result": context.llm_result,
+
+            "decision": decision,
+
+            "confidence": confidence,
+
+            "formatted": formatted,
+
+        }
 
     # ------------------------------------------------
 
@@ -102,13 +118,23 @@ class PipelineOrchestrator:
             "message_id"
         ]
 
-        result = self.run(message_id)
+        pipeline_result = self.run(
+            message_id
+        )
 
-        self.writer.write_json(result)
+        formatted = pipeline_result[
+            "formatted"
+        ]
 
-        self.writer.write_csv(result)
+        self.writer.write_json(
+            formatted
+        )
 
-        return result
+        self.writer.write_csv(
+            formatted
+        )
+
+        return pipeline_result
 
     # ------------------------------------------------
 
@@ -116,15 +142,21 @@ class PipelineOrchestrator:
 
         results = []
 
-        for message_id in self.data.messages["message_id"]:
+        for message_id in self.data.messages[
+            "message_id"
+        ]:
 
             try:
 
-                result = self.run(
+                pipeline_result = self.run(
                     message_id
                 )
 
-                results.append(result)
+                results.append(
+                    pipeline_result[
+                        "formatted"
+                    ]
+                )
 
             except Exception as e:
 
@@ -157,4 +189,5 @@ class PipelineOrchestrator:
             "output_csv": str(
                 csv_file
             ),
+
         }
