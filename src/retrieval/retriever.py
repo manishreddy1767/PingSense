@@ -1,5 +1,6 @@
 from src.config.settings import RETRIEVAL
 
+from src.retrieval.semantic.embedder import SemanticEmbedder
 from src.retrieval.models import Evidence
 from src.retrieval.search import CandidateSearch
 
@@ -12,9 +13,17 @@ class EvidenceRetriever:
 
         self.search = CandidateSearch(repo)
 
+        self.embedder = SemanticEmbedder()
+
         self.weights = RETRIEVAL["weights"]
 
         self.top_k = RETRIEVAL["top_k"]
+
+        self.semantic_enabled = RETRIEVAL["semantic"]["enabled"]
+
+        self.semantic_weight = RETRIEVAL["semantic"]["weight"]
+
+    # ---------------------------------------------------------
 
     def retrieve(self, context):
 
@@ -59,18 +68,52 @@ class EvidenceRetriever:
                 reason.append("same group")
 
             # ---------------------------------------
-            # Text Similarity
+            # Token Overlap
             # ---------------------------------------
 
-            similarity = self.search.token_overlap(
+            token_similarity = self.search.token_overlap(
+
                 row["message_text"],
+
                 context.effective_text,
+
             )
 
             score += (
-                similarity
+
+                token_similarity
+
                 * self.weights["text_similarity"]
+
             )
+
+            # ---------------------------------------
+            # Semantic Similarity
+            # ---------------------------------------
+
+            semantic_similarity = 0.0
+
+            if self.semantic_enabled:
+
+                semantic_similarity = self.embedder.similarity(
+
+                    row["message_text"],
+
+                    context.effective_text,
+
+                )
+
+                score += (
+
+                    semantic_similarity
+
+                    * self.semantic_weight
+
+                )
+
+                if semantic_similarity > 0.70:
+
+                    reason.append("semantic match")
 
             # ---------------------------------------
             # Default reason
@@ -81,45 +124,54 @@ class EvidenceRetriever:
                 reason.append("same user history")
 
             # ---------------------------------------
-            # Previous user interaction
+            # Previous User Behaviour
             # ---------------------------------------
 
             events = self.repo.get_message_events(
-                row["message_id"],
-                row["user_id"],
-            )
 
-            # ---------------------------------------
-            # Behavioral Boosting
-            # ---------------------------------------
+                row["message_id"],
+
+                row["user_id"],
+
+            )
 
             if events is not None:
 
                 if events.message_opened:
+
                     score += 0.05
+
                     reason.append("previously opened")
 
                 if events.message_replied:
+
                     score += 0.05
+
                     reason.append("previously replied")
 
                 if events.notification_dismissed:
+
                     score -= 0.05
+
                     reason.append("previously dismissed")
 
                 if events.message_reported:
+
                     score -= 0.10
+
                     reason.append("previously reported")
 
             # ---------------------------------------
-            # Normalize score
+            # Clamp Score
             # ---------------------------------------
 
-            score = max(0.0, min(score, 1.0))
+            score = max(
 
-            # ---------------------------------------
-            # Store Evidence
-            # ---------------------------------------
+                0.0,
+
+                min(score, 1.0),
+
+            )
 
             evidence.append(
 
@@ -129,7 +181,7 @@ class EvidenceRetriever:
 
                     score=round(score, 3),
 
-                    similarity=round(similarity, 3),
+                    similarity=round(semantic_similarity, 3),
 
                     reason=", ".join(reason),
 

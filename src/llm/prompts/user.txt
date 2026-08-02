@@ -1,0 +1,23 @@
+Incoming Message
+
+{{message}}
+
+Retrieved Evidence
+
+{{evidence}}
+
+Triggered Rules
+
+{{rules}}
+
+Risk Score
+
+{{risk_score}}
+
+Historical Behaviour
+
+{{history}}
+
+Decide the correct action.
+
+Return JSON only.

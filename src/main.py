@@ -1,53 +1,41 @@
 from pprint import pprint
 
-from src.data.manager import DataManager
-from src.data.repository import Repository
-
-from src.context.builder import ContextBuilder
-from src.context.joins import ContextJoins
-
-from src.multimodal.normalizer import MultimodalNormalizer
-from src.retrieval.retriever import EvidenceRetriever
-from src.rules.engine import RuleEngine
+from src.pipeline.orchestrator import (
+    PipelineOrchestrator,
+)
 
 
 def main():
 
-    data = DataManager.load()
+    pipeline = PipelineOrchestrator()
 
-    repo = Repository(data)
+    batch = pipeline.run_batch()
 
-    builder = ContextBuilder(
-        ContextJoins(repo)
-    )
+    results = batch["results"]
 
-    normalizer = MultimodalNormalizer()
+    analytics = batch["analytics"]
 
-    retriever = EvidenceRetriever(repo)
+    print()
 
-    engine = RuleEngine()
+    print("=" * 60)
+    print("PINGSENSE BATCH PROCESSING")
+    print("=" * 60)
 
-    message_id = data.messages.iloc[0]["message_id"]
+    print(f"\nProcessed {len(results)} messages.\n")
 
-    context = builder.build(message_id)
+    print("Sample Results\n")
 
-    context = normalizer.normalize(context)
+    pprint(results[:3])
 
-    context = retriever.retrieve(context)
+    print("\nAnalytics Summary\n")
 
-    context = engine.run(context)
+    pprint(analytics)
 
-    print("\n================ MESSAGE ================\n")
-    print(context.effective_text)
+    print("\nOutput Files\n")
 
-    print("\n================ EVIDENCE ================\n")
+    print(batch["output_json"])
 
-    for evidence in context.retrieved_evidence:
-        print(evidence)
-
-    print("\n================ RULE RESULT ================\n")
-
-    pprint(context.rule_features)
+    print(batch["output_csv"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,882 @@
+[
+    {
+        "message_id": "msg_023",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Payment related message.",
+        "confidence": 0.765,
+        "evidence_message_ids": "message_0243,message_0102"
+    },
+    {
+        "message_id": "msg_091",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.531,
+        "evidence_message_ids": "message_0238,message_0320"
+    },
+    {
+        "message_id": "msg_090",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.524,
+        "evidence_message_ids": "message_0339,message_0340"
+    },
+    {
+        "message_id": "msg_048",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.699,
+        "evidence_message_ids": "message_0151,message_0152"
+    },
+    {
+        "message_id": "msg_040",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.557,
+        "evidence_message_ids": "message_0136,message_0135"
+    },
+    {
+        "message_id": "msg_075",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.776,
+        "evidence_message_ids": "message_0206,message_0205"
+    },
+    {
+        "message_id": "msg_005",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.641,
+        "evidence_message_ids": "message_0390,message_0332"
+    },
+    {
+        "message_id": "msg_104",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.592,
+        "evidence_message_ids": "message_0224,message_0050"
+    },
+    {
+        "message_id": "msg_069",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.599,
+        "evidence_message_ids": "message_0177,message_0193"
+    },
+    {
+        "message_id": "msg_107",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.689,
+        "evidence_message_ids": "message_0023,message_0045"
+    },
+    {
+        "message_id": "msg_070",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.756,
+        "evidence_message_ids": "message_0369,message_0023"
+    },
+    {
+        "message_id": "msg_003",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.881,
+        "evidence_message_ids": "message_0400,message_0031"
+    },
+    {
+        "message_id": "msg_099",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.625,
+        "evidence_message_ids": "message_0227,message_0249"
+    },
+    {
+        "message_id": "msg_008",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.769,
+        "evidence_message_ids": "message_0296,message_0072"
+    },
+    {
+        "message_id": "msg_092",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Payment related message.",
+        "confidence": 0.675,
+        "evidence_message_ids": "message_0346,message_0344"
+    },
+    {
+        "message_id": "msg_060",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.632,
+        "evidence_message_ids": "message_0404,message_0176"
+    },
+    {
+        "message_id": "msg_004",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.89,
+        "evidence_message_ids": "message_0245,message_0005"
+    },
+    {
+        "message_id": "msg_030",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.595,
+        "evidence_message_ids": "message_0335,message_0224"
+    },
+    {
+        "message_id": "msg_045",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.605,
+        "evidence_message_ids": "message_0146,message_0145"
+    },
+    {
+        "message_id": "msg_052",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.728,
+        "evidence_message_ids": "message_0207,message_0208"
+    },
+    {
+        "message_id": "msg_009",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.577,
+        "evidence_message_ids": "message_0074,message_0073"
+    },
+    {
+        "message_id": "msg_071",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.572,
+        "evidence_message_ids": "message_0197,message_0198"
+    },
+    {
+        "message_id": "msg_016",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.672,
+        "evidence_message_ids": "message_0024,message_0201"
+    },
+    {
+        "message_id": "msg_065",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.748,
+        "evidence_message_ids": "message_0186,message_0185"
+    },
+    {
+        "message_id": "msg_038",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.521,
+        "evidence_message_ids": "message_0131,message_0132"
+    },
+    {
+        "message_id": "msg_086",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.709,
+        "evidence_message_ids": "message_0222,message_0118"
+    },
+    {
+        "message_id": "msg_014",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.861,
+        "evidence_message_ids": "message_0258,message_0018"
+    },
+    {
+        "message_id": "msg_094",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.625,
+        "evidence_message_ids": "message_0356,message_0388"
+    },
+    {
+        "message_id": "msg_029",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.621,
+        "evidence_message_ids": "message_0390,message_0332"
+    },
+    {
+        "message_id": "msg_105",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.567,
+        "evidence_message_ids": "message_0373,message_0233"
+    },
+    {
+        "message_id": "msg_002",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.798,
+        "evidence_message_ids": "message_0003,message_0059"
+    },
+    {
+        "message_id": "msg_010",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Payment related message.",
+        "confidence": 0.847,
+        "evidence_message_ids": "message_0011,message_0242"
+    },
+    {
+        "message_id": "msg_078",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.497,
+        "evidence_message_ids": "message_0211,message_0212"
+    },
+    {
+        "message_id": "msg_013",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.657,
+        "evidence_message_ids": "message_0082,message_0081"
+    },
+    {
+        "message_id": "msg_018",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.517,
+        "evidence_message_ids": "message_0092,message_0091"
+    },
+    {
+        "message_id": "msg_044",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.65,
+        "evidence_message_ids": "message_0036,message_0143"
+    },
+    {
+        "message_id": "msg_032",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.637,
+        "evidence_message_ids": "message_0119,message_0285"
+    },
+    {
+        "message_id": "msg_106",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.584,
+        "evidence_message_ids": "message_0376,message_0234"
+    },
+    {
+        "message_id": "msg_006",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.666,
+        "evidence_message_ids": "message_0029,message_0044"
+    },
+    {
+        "message_id": "msg_109",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.693,
+        "evidence_message_ids": "message_0151,message_0152"
+    },
+    {
+        "message_id": "msg_108",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.58,
+        "evidence_message_ids": "message_0094,message_0093"
+    },
+    {
+        "message_id": "msg_019",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.608,
+        "evidence_message_ids": "message_0093,message_0094"
+    },
+    {
+        "message_id": "msg_088",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.593,
+        "evidence_message_ids": "message_0335,message_0224"
+    },
+    {
+        "message_id": "msg_056",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.625,
+        "evidence_message_ids": "message_0168,message_0167"
+    },
+    {
+        "message_id": "msg_027",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.807,
+        "evidence_message_ids": "message_0110,message_0272"
+    },
+    {
+        "message_id": "msg_050",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.809,
+        "evidence_message_ids": "message_0279,message_0156"
+    },
+    {
+        "message_id": "msg_083",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.546,
+        "evidence_message_ids": "message_0219,message_0323"
+    },
+    {
+        "message_id": "msg_063",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.667,
+        "evidence_message_ids": "message_0181,message_0182"
+    },
+    {
+        "message_id": "msg_033",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.589,
+        "evidence_message_ids": "message_0121,message_0122"
+    },
+    {
+        "message_id": "msg_061",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.615,
+        "evidence_message_ids": "message_0177,message_0193"
+    },
+    {
+        "message_id": "msg_020",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.549,
+        "evidence_message_ids": "message_0096,message_0095"
+    },
+    {
+        "message_id": "msg_017",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.649,
+        "evidence_message_ids": "message_0089,message_0090"
+    },
+    {
+        "message_id": "msg_058",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.62,
+        "evidence_message_ids": "message_0241,message_0078"
+    },
+    {
+        "message_id": "msg_026",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.69,
+        "evidence_message_ids": "message_0032,message_0107"
+    },
+    {
+        "message_id": "msg_047",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.619,
+        "evidence_message_ids": "message_0150,message_0149"
+    },
+    {
+        "message_id": "msg_046",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.677,
+        "evidence_message_ids": "message_0147,message_0148"
+    },
+    {
+        "message_id": "msg_042",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.617,
+        "evidence_message_ids": "message_0140,message_0058"
+    },
+    {
+        "message_id": "msg_079",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.747,
+        "evidence_message_ids": "message_0023,message_0045"
+    },
+    {
+        "message_id": "msg_098",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.607,
+        "evidence_message_ids": "message_0359,message_0168"
+    },
+    {
+        "message_id": "msg_037",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.649,
+        "evidence_message_ids": "message_0269,message_0001"
+    },
+    {
+        "message_id": "msg_007",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.565,
+        "evidence_message_ids": "message_0069,message_0070"
+    },
+    {
+        "message_id": "msg_085",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.549,
+        "evidence_message_ids": "message_0221,message_0368"
+    },
+    {
+        "message_id": "msg_001",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.631,
+        "evidence_message_ids": "message_0057,message_0240"
+    },
+    {
+        "message_id": "msg_021",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.781,
+        "evidence_message_ids": "message_0098,message_0068"
+    },
+    {
+        "message_id": "msg_028",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.743,
+        "evidence_message_ids": "message_0111,message_0112"
+    },
+    {
+        "message_id": "msg_012",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.593,
+        "evidence_message_ids": "message_0079,message_0247"
+    },
+    {
+        "message_id": "msg_064",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.575,
+        "evidence_message_ids": "message_0201,message_0087"
+    },
+    {
+        "message_id": "msg_103",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.632,
+        "evidence_message_ids": "message_0065,message_0382"
+    },
+    {
+        "message_id": "msg_031",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.621,
+        "evidence_message_ids": "message_0118,message_0249"
+    },
+    {
+        "message_id": "msg_057",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.686,
+        "evidence_message_ids": "message_0266,message_0041"
+    },
+    {
+        "message_id": "msg_087",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.576,
+        "evidence_message_ids": "message_0223,message_0358"
+    },
+    {
+        "message_id": "msg_067",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.801,
+        "evidence_message_ids": "message_0097,message_0067"
+    },
+    {
+        "message_id": "msg_039",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.771,
+        "evidence_message_ids": "message_0051,message_0037"
+    },
+    {
+        "message_id": "msg_082",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.589,
+        "evidence_message_ids": "message_0397,message_0218"
+    },
+    {
+        "message_id": "msg_066",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.721,
+        "evidence_message_ids": "message_0187,message_0188"
+    },
+    {
+        "message_id": "msg_049",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.76,
+        "evidence_message_ids": "message_0291,message_0154"
+    },
+    {
+        "message_id": "msg_015",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.715,
+        "evidence_message_ids": "message_0199,message_0085"
+    },
+    {
+        "message_id": "msg_051",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.82,
+        "evidence_message_ids": "message_0257,message_0103"
+    },
+    {
+        "message_id": "msg_097",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.606,
+        "evidence_message_ids": "message_0167,message_0054"
+    },
+    {
+        "message_id": "msg_089",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.478,
+        "evidence_message_ids": "message_0299,message_0396"
+    },
+    {
+        "message_id": "msg_053",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.584,
+        "evidence_message_ids": "message_0162,message_0411"
+    },
+    {
+        "message_id": "msg_059",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.617,
+        "evidence_message_ids": "message_0053,message_0023"
+    },
+    {
+        "message_id": "msg_024",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.82,
+        "evidence_message_ids": "message_0257,message_0103"
+    },
+    {
+        "message_id": "msg_072",
+        "action": "notify",
+        "message_type": "urgent",
+        "reason": "OTP requires immediate attention.",
+        "confidence": 0.736,
+        "evidence_message_ids": "message_0199,message_0085"
+    },
+    {
+        "message_id": "msg_036",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.693,
+        "evidence_message_ids": "message_0283,message_0128"
+    },
+    {
+        "message_id": "msg_076",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.728,
+        "evidence_message_ids": "message_0207,message_0208"
+    },
+    {
+        "message_id": "msg_055",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.582,
+        "evidence_message_ids": "message_0166,message_0165"
+    },
+    {
+        "message_id": "msg_102",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.65,
+        "evidence_message_ids": "message_0371,message_0230"
+    },
+    {
+        "message_id": "msg_080",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.679,
+        "evidence_message_ids": "message_0216,message_0130"
+    },
+    {
+        "message_id": "msg_093",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.621,
+        "evidence_message_ids": "message_0387,message_0347"
+    },
+    {
+        "message_id": "msg_034",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.599,
+        "evidence_message_ids": "message_0013,message_0123"
+    },
+    {
+        "message_id": "msg_035",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Payment related message.",
+        "confidence": 0.793,
+        "evidence_message_ids": "message_0281,message_0125"
+    },
+    {
+        "message_id": "msg_101",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.592,
+        "evidence_message_ids": "message_0268,message_0370"
+    },
+    {
+        "message_id": "msg_041",
+        "action": "notify",
+        "message_type": "business",
+        "reason": "Verified business message.",
+        "confidence": 0.727,
+        "evidence_message_ids": "message_0137,message_0138"
+    },
+    {
+        "message_id": "msg_011",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.613,
+        "evidence_message_ids": "message_0014,message_0123"
+    },
+    {
+        "message_id": "msg_110",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.528,
+        "evidence_message_ids": "message_0238,message_0320"
+    },
+    {
+        "message_id": "msg_095",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.624,
+        "evidence_message_ids": "message_0024,message_0201"
+    },
+    {
+        "message_id": "msg_074",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.558,
+        "evidence_message_ids": "message_0358,message_0223"
+    },
+    {
+        "message_id": "msg_073",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.54,
+        "evidence_message_ids": "message_0024,message_0201"
+    },
+    {
+        "message_id": "msg_054",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.672,
+        "evidence_message_ids": "message_0163,message_0164"
+    },
+    {
+        "message_id": "msg_068",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.575,
+        "evidence_message_ids": "message_0191,message_0192"
+    },
+    {
+        "message_id": "msg_100",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.739,
+        "evidence_message_ids": "message_0362,message_0228"
+    },
+    {
+        "message_id": "msg_062",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.625,
+        "evidence_message_ids": "message_0043,message_0001"
+    },
+    {
+        "message_id": "msg_096",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.514,
+        "evidence_message_ids": "message_0353,message_0354"
+    },
+    {
+        "message_id": "msg_043",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.628,
+        "evidence_message_ids": "message_0216,message_0130"
+    },
+    {
+        "message_id": "msg_077",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.646,
+        "evidence_message_ids": "message_0403,message_0051"
+    },
+    {
+        "message_id": "msg_081",
+        "action": "mute",
+        "message_type": "group",
+        "reason": "Routine group message.",
+        "confidence": 0.547,
+        "evidence_message_ids": "message_0217,message_0106"
+    },
+    {
+        "message_id": "msg_025",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.851,
+        "evidence_message_ids": "message_0239,message_0004"
+    },
+    {
+        "message_id": "msg_084",
+        "action": "summarize",
+        "message_type": "promotion",
+        "reason": "Promotional message.",
+        "confidence": 0.682,
+        "evidence_message_ids": "message_0220,message_0388"
+    },
+    {
+        "message_id": "msg_022",
+        "action": "notify",
+        "message_type": "scam",
+        "reason": "Suspicious content detected.",
+        "confidence": 0.693,
+        "evidence_message_ids": "message_0099,message_0100"
+    }
+]

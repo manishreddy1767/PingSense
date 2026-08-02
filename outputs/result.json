@@ -1,0 +1,13 @@
+{
+    "message_id": "msg_023",
+    "user_id": "u_002",
+    "action": "notify",
+    "message_type": "business",
+    "reason": "Verified banking notification.",
+    "confidence": 0.717,
+    "evidence_ids": [
+        "message_0243",
+        "message_0102"
+    ],
+    "override": null
+}
