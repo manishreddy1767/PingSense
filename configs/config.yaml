@@ -1,0 +1,24 @@
+project:
+  name: PingSense
+  version: 1.0
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  cache: data/cache
+  output: outputs
+
+retrieval:
+  top_k: 5
+
+llm:
+  provider: claude
+  temperature: 0.0
+  max_tokens: 500
+
+rules:
+  quiet_hours_start: "22:00"
+  quiet_hours_end: "07:00"
+
+confidence:
+  override_score: 0.95
