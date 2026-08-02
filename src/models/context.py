@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional
-
+from src.rules.models import RuleFeatures
 from src.models.message import Message
 from src.models.user import User
 from src.models.group import Group
@@ -34,7 +34,7 @@ class Context:
     # Metadata produced later in the pipeline
     retrieved_evidence: Optional[list] = None
 
-    rule_features: Optional[dict] = None
+    rule_features: RuleFeatures | None = None
 
     llm_result: Optional[dict] = None
 
