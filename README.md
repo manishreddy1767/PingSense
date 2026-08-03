@@ -192,38 +192,6 @@ The analytics dashboard provides
 
 ---
 
-# 📷 Screenshots
-
-## Home Dashboard
-
-![Home](screenshots/home.png)
-
----
-
-## Analytics Dashboard
-
-![Analytics](screenshots/analytics.png)
-
----
-
-## Architecture
-
-![Architecture](screenshots/architecture.png)
-
----
-
-## Decision View
-
-![Decision](screenshots/decision.png)
-
----
-
-## Evidence View
-
-![Evidence](screenshots/evidence.png)
-
----
-
 # 📈 Sample Output
 
 ```json
